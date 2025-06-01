@@ -95,7 +95,7 @@ async def get_user_settings(from_user, stype="main"):
             "User Session",
             f"userset {user_id} menu USER_SESSION",
         )
-        usess = "added" if user_dict.get("USER_DUMP", False) else "None"
+        usess = "added" if user_dict.get("USER_SESSION", False) else "None"
         if user_dict.get("AS_DOCUMENT", False) or (
             "AS_DOCUMENT" not in user_dict and Config.AS_DOCUMENT
         ):
@@ -143,7 +143,7 @@ Leech Type is <b>{ltype}</b>
 Media Group is <b>{media_group}</b>
 Leech Prefix is <code>{escape(lprefix)}</code>
 Leech Caption is <code>{escape(lcap)}</code>
-User session id {usess}
+User session is {usess}
 User dump <code>{udump}</code>
 Thumbnail Layout is <b>{thumb_layout}</b>
 """

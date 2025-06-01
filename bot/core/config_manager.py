@@ -16,7 +16,7 @@ class Config:
     BOT_TOKEN: str = ""
     CMD_SUFFIX: str = ""
     DATABASE_URL: str = ""
-    DEFAULT_UPLOAD: str = "rc"
+    DEFAULT_UPLOAD: str = ""
     EXCLUDED_EXTENSIONS: str = ""
     FFMPEG_CMDS: ClassVar[dict[str, list[str]]] = {}
     FILELION_API: str = ""
@@ -65,7 +65,7 @@ class Config:
     WEB_PINCODE: bool = False
     YT_DLP_OPTIONS: ClassVar[dict[str, Any]] = {}
 
-    # INKYPINKY
+    # Aeon-MLTB Specific / Custom Features
     METADATA_KEY: str = ""
     WATERMARK_KEY: str = ""
     SET_COMMANDS: bool = True
@@ -138,8 +138,10 @@ class Config:
         if isinstance(value, str):
             value = value.strip()
 
-        if key == "DEFAULT_UPLOAD" and value != "gd":
-            return "rc"
+        if key == "DEFAULT_UPLOAD":
+            if value.lower() not in ["yt", "gd", "rc"]:
+                return ""  # If not yt, gd, or rc, set to empty (no specific default)
+            return value.lower()
 
         if key in {"BASE_URL", "RCLONE_SERVE_URL", "INDEX_URL"}:
             return value.strip("/")
