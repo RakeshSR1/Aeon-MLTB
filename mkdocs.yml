@@ -2,9 +2,10 @@ site_name: Aeon-MLTB Bot
 theme:
   name: material
 nav:
-  - Home: index.md
-  - Commands: COMMANDS.md
-  - Configurations: CONFIGURATIONS.md
-  - Deployment: DEPLOYMENT.md
-  - Features: FEATURES.md
-  - Extras: EXTRAS.md
+- Home: index.md
+- Commands: COMMANDS.md
+- Configurations: CONFIGURATIONS.md
+- Deployment: DEPLOYMENT.md
+- Features: FEATURES.md
+- Task Options: TASK_OPTIONS.md
+- Extras: EXTRAS.md
